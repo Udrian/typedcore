@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<Authors>Simon Haggren</Authors>
+		<Company>Typedeaf</Company>
+		<Product>TypeO</Product>
+		<UseWPF>true</UseWPF>
+		<PreserveCompilationContext>false</PreserveCompilationContext>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+	</PropertyGroup>
+	<Target Name="PreBuild" BeforeTargets="PreBuildEvent" Condition="'$(OS)' == 'Windows_NT'">
+		<Exec Command="cmd /c &quot;$(ProjectDir)../typer/dependency.py -p $(ProjectDir)../&quot;"/>
+	</Target>
+	<ItemGroup>
+		<PackageReference Include="Ookii.Dialogs.Wpf" Version="5.0.1"/>
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Update="View\Panels\OutputPanel.xaml.cs">
+			<SubType>Code</SubType>
+		</Compile>
+	</ItemGroup>
+	<ItemGroup>
+		<Page Update="View\Panels\ComponentBrowserPanel.xaml">
+			<XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+		</Page>
+		<Page Update="View\Panels\ComponentPanel.xaml">
+			<XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+		</Page>
+		<Page Update="View\Panels\OutputPanel.xaml">
+			<XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+			<SubType>Designer</SubType>
+		</Page>
+	</ItemGroup>
+	<ItemGroup Label="TypeOModules">
+		<Reference Include="TypeOCore" HintPath="C:\Users\simon\AppData\Local/TypeO/ModulesCache/TypeOCore/0.1.0/TypeOCore.dll"/>
+		<Reference Include="TypeD" HintPath="C:\Users\simon\AppData\Local/TypeO/ModulesCache/TypeD/0.1.0/TypeD.dll"/>
+	</ItemGroup>
+</Project>
