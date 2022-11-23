@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TypeDCore", "TypeDCore\Type
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TypeDCoreTest", "TypeDCoreTest\TypeDCoreTest.csproj", "{014EE132-A4FA-4C93-B238-035F95A14649}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeOCore", "..\typeocore\TypeOCore\TypeOCore.csproj", "{7537D057-2097-4813-8895-D0119AC0643F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{014EE132-A4FA-4C93-B238-035F95A14649}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{014EE132-A4FA-4C93-B238-035F95A14649}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{014EE132-A4FA-4C93-B238-035F95A14649}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7537D057-2097-4813-8895-D0119AC0643F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7537D057-2097-4813-8895-D0119AC0643F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7537D057-2097-4813-8895-D0119AC0643F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7537D057-2097-4813-8895-D0119AC0643F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

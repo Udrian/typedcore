@@ -15,7 +15,7 @@ namespace TypeDCore.Components
         // Functions
         public override void ChildrenFilter(FilterHelper filter)
         {
-            filter.Filters += $"{typeof(Drawable2d).FullName};";
+            filter.Filters += $"{typeof(Drawable).FullName};";
         }
     }
 }

@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using TypeD.Code;
 using TypeD.Models.Data;
-using TypeOEngine.Typedeaf.Core.Entities.Drawables;
 
 namespace TypeDCore.Code.Drawable
 {
-    public class Drawable2dCode : ComponentTypeCode
+    public class DrawableCode : ComponentTypeCode
     {
         // Properties
-        public override Type TypeOBaseType { get { return typeof(Drawable2d); } }
+        public override Type TypeOBaseType { get { return typeof(TypeOEngine.Typedeaf.Core.Entities.Drawables.Drawable); } }
 
         // Constructors
-        public Drawable2dCode(Component component) : base(component)
+        public DrawableCode(Component component) : base(component)
         {
             PartialClass = false;
         }

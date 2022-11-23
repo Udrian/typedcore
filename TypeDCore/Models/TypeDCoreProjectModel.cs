@@ -62,7 +62,7 @@ namespace TypeDCore.Models
             );
         }
 
-        public void CreateDrawable2d(Project project, string className, string @namespace, Component parentComponent)
+        public void CreateDrawable(Project project, string className, string @namespace, Component parentComponent)
         {
             @namespace = ProjectModel.TransformNamespaceString(project, @namespace);
 

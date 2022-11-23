@@ -15,7 +15,7 @@ namespace TypeDCore.View.Dialogs.Project
         public CreateEntityTypeDialog(TypeD.Models.Data.Project project, string @namespace)
         {
             InitializeComponent();
-            ViewModel = new CreateEntityTypeViewModel(project, @namespace, typeof(TypeOEngine.Typedeaf.Core.Entities.Entity2d).FullName);
+            ViewModel = new CreateEntityTypeViewModel(project, @namespace, typeof(TypeOEngine.Typedeaf.Core.Entities.Entity).FullName);
             this.DataContext = ViewModel;
         }
 

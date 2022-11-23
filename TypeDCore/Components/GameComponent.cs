@@ -16,8 +16,8 @@ namespace TypeDCore.Components
         // Functions
         public override void ChildrenFilter(FilterHelper filter)
         {
-            filter.Exclude += $"{typeof(Drawable2d).FullName};";
-            filter.Exclude += $"{typeof(Entity2d).FullName};";
+            filter.Exclude += $"{typeof(Drawable).FullName};";
+            filter.Exclude += $"{typeof(Entity).FullName};";
         }
     }
 }

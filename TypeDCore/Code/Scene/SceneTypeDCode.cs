@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using TypeD.Code;
-using TypeOEngine.Typedeaf.Core.Entities;
 
 namespace TypeDCore.Code.Scene
 {
@@ -21,7 +20,7 @@ namespace TypeDCore.Code.Scene
                 }
                 foreach (var child in Component.Children)
                 {
-                    if(child.TypeOBaseType == typeof(Entity2d))
+                    if(child.TypeOBaseType == typeof(TypeOEngine.Typedeaf.Core.Entities.Entity))
                         Writer.AddLine($"Entities.Create<{child.FullName}>();");
                 }
                 if (IsBaseComponentType)

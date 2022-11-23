@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using TypeD.Code;
-using TypeD.Helpers;
-using TypeOEngine.Typedeaf.Core.Entities;
-using TypeOEngine.Typedeaf.Core.Entities.Drawables;
+﻿using TypeD.Code;
 using TypeOEngine.Typedeaf.Core.Entities.Interfaces;
 using TypeOEngine.Typedeaf.Core.Interfaces;
 
@@ -20,9 +16,9 @@ namespace TypeDCore.Code.Entity
                 }
                 foreach (var child in Component.Children)
                 {
-                    if (child.TypeOBaseType == typeof(Entity2d))
+                    if (child.TypeOBaseType == typeof(TypeOEngine.Typedeaf.Core.Entities.Entity))
                         Writer.AddLine($"Entities.Create<{child.FullName}>();");
-                    else if (child.TypeOBaseType == typeof(Drawable2d))
+                    else if (child.TypeOBaseType == typeof(TypeOEngine.Typedeaf.Core.Entities.Drawables.Drawable))
                         Writer.AddLine($"Drawables.Create<{child.FullName}>();");
                 }
                 if (IsBaseComponentType)

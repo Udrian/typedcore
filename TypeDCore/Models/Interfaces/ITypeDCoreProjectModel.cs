@@ -7,6 +7,6 @@ namespace TypeDCore.Models.Interfaces
     {
         public void CreateEntity(Project project, string className, string @namespace, Component parentComponent, bool updatable, bool drawable);
         public void CreateScene(Project project, string className, string @namespace, Component parentComponent);
-        public void CreateDrawable2d(Project project, string className, string @namespace, Component parentComponent);
+        public void CreateDrawable(Project project, string className, string @namespace, Component parentComponent);
     }
 }

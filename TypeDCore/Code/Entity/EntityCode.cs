@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using TypeD.Code;
 using TypeD.Models.Data;
-using TypeOEngine.Typedeaf.Core.Entities;
 using TypeOEngine.Typedeaf.Core.Entities.Interfaces;
 using TypeOEngine.Typedeaf.Core.Interfaces;
 
@@ -11,7 +9,7 @@ namespace TypeDCore.Code.Entity
     public partial class EntityCode : ComponentTypeCode
     {
         // Properties
-        public override Type TypeOBaseType { get { return typeof(Entity2d); } }
+        public override Type TypeOBaseType { get { return typeof(TypeOEngine.Typedeaf.Core.Entities.Entity); } }
         public bool Updatable { get; private set; }
         public bool Drawable { get; private set; }
 

@@ -34,7 +34,7 @@ namespace TypeDCore
         // Commands
         CreateEntityTypeCommand CreateEntityTypeCommand { get; set; }
         CreateSceneTypeCommand CreateSceneTypeCommand { get; set; }
-        CreateDrawable2dTypeCommand CreateDrawable2dTypeCommand { get; set; }
+        CreateDrawableTypeCommand CreateDrawable2dTypeCommand { get; set; }
         DeleteComponentTypeCommand DeleteComponentTypeCommand { get; set; }
         RenameComponentTypeCommand RenameComponentTypeCommand { get; set; }
         SetStartSceneCommand SetStartSceneCommand { get; set; }
@@ -66,7 +66,7 @@ namespace TypeDCore
             // Commands
             CreateEntityTypeCommand = new CreateEntityTypeCommand(Resources);
             CreateSceneTypeCommand = new CreateSceneTypeCommand(Resources);
-            CreateDrawable2dTypeCommand = new CreateDrawable2dTypeCommand(Resources);
+            CreateDrawable2dTypeCommand = new CreateDrawableTypeCommand(Resources);
             DeleteComponentTypeCommand = new DeleteComponentTypeCommand(Resources);
             RenameComponentTypeCommand = new RenameComponentTypeCommand(Resources);
             SetStartSceneCommand = new SetStartSceneCommand(Resources);

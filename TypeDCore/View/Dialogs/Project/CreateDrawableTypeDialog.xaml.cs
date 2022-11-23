@@ -6,16 +6,16 @@ namespace TypeDCore.View.Dialogs.Project
     /// <summary>
     /// Interaction logic for CreateDrawable2dDialog.xaml
     /// </summary>
-    public partial class CreateDrawable2dTypeDialog : Window
+    public partial class CreateDrawableTypeDialog : Window
     {
         // ViewModel
         internal CreateComponentTypeBaseViewModel ViewModel { get; set; }
 
         // Constructors
-        public CreateDrawable2dTypeDialog(TypeD.Models.Data.Project project, string @namespace)
+        public CreateDrawableTypeDialog(TypeD.Models.Data.Project project, string @namespace)
         {
             InitializeComponent();
-            ViewModel = new CreateComponentTypeBaseViewModel(project, @namespace, typeof(TypeOEngine.Typedeaf.Core.Entities.Drawables.Drawable2d).FullName);
+            ViewModel = new CreateComponentTypeBaseViewModel(project, @namespace, typeof(TypeOEngine.Typedeaf.Core.Entities.Drawables.Drawable).FullName);
             this.DataContext = ViewModel;
         }
 

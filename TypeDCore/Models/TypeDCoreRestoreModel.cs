@@ -48,7 +48,7 @@ namespace TypeDCore.Models
             foreach (var type in types)
             {
                 // Only restore if type is a subclass to any of the following types
-                if (new List<Type>() { typeof(Entity), typeof(Scene), typeof(Drawable2d) }.Find(t => type.IsSubclassOf(t)) == null)
+                if (new List<Type>() { typeof(Entity), typeof(Scene), typeof(Drawable) }.Find(t => type.IsSubclassOf(t)) == null)
                 {
                     continue;
                 }
@@ -69,9 +69,9 @@ namespace TypeDCore.Models
                     {
                         TypeDCoreProjectModel.CreateScene(project, type.Name, type.Namespace, parentComponent);
                     }
-                    else if (type == typeof(Drawable2d))
+                    else if (type == typeof(Drawable))
                     {
-                        TypeDCoreProjectModel.CreateDrawable2d(project, type.Name, type.Namespace, parentComponent);
+                        TypeDCoreProjectModel.CreateDrawable(project, type.Name, type.Namespace, parentComponent);
                     }
 
                     var csFilePath = Path.Combine(project.Location, $"{type.FullName.Replace('.', Path.DirectorySeparatorChar)}.cs");
@@ -111,7 +111,7 @@ namespace TypeDCore.Models
                 var csTypeDFile = component.Template.Code.FilePathTypeD();
                 var parentComponent = ComponentProvider.Load(project, component.ParentComponent?.FullName);
 
-                if (component.TypeOBaseType == typeof(Entity2d))
+                if (component.TypeOBaseType == typeof(Entity))
                 {
                     if (!File.Exists(csFile) || !File.Exists(csTypeDFile))
                     {
@@ -129,7 +129,7 @@ namespace TypeDCore.Models
                         updateTree = true;
                     }
                 }
-                else if (component.TypeOBaseType == typeof(Drawable2d))
+                else if (component.TypeOBaseType == typeof(Drawable))
                 {
                     if (!File.Exists(csFile))
                     {

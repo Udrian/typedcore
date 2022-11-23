@@ -54,7 +54,7 @@ namespace TypeDCore.ViewModel.Viewer
         {
             Component = component;
 
-            if (Component.TypeOBaseType == typeof(Drawable2d))
+            if (Component.TypeOBaseType == typeof(Drawable))
             {
                 DrawableViewer = new DrawableViewer(project, Component);
             }
