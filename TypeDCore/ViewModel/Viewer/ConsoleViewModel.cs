@@ -2,7 +2,6 @@
 using System.IO;
 using System.Text;
 using TypeD.Models.Data;
-using TypeD.View.Viewer;
 using TypeD.ViewModel;
 using TypeDCore.View.Viewer;
 using TypeOEngine.Typedeaf.Core.Entities.Drawables;

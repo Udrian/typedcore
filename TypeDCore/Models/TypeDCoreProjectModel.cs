@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using TypeD.Models.Data;
+using TypeD.Models.Data.SaveContexts;
 using TypeD.Models.Interfaces;
 using TypeD.Models.Providers.Interfaces;
 using TypeDCore.Components;
 using TypeDCore.Models.Interfaces;
+using TypeOEngine.Typedeaf.Core;
 using TypeOEngine.Typedeaf.Core.Entities.Interfaces;
 using TypeOEngine.Typedeaf.Core.Interfaces;
 
@@ -13,6 +15,7 @@ namespace TypeDCore.Models
     {
         // Models
         IProjectModel ProjectModel { get; set; }
+        ISaveModel SaveModel { get; set; }
 
         // Providers
         IComponentProvider ComponentProvider { get; set; }
@@ -23,6 +26,7 @@ namespace TypeDCore.Models
         public void Init(IResourceModel resourceModel)
         {
             ProjectModel = resourceModel.Get<IProjectModel>();
+            SaveModel = resourceModel.Get<ISaveModel>();
             ComponentProvider = resourceModel.Get<IComponentProvider>();
         }
 
@@ -72,6 +76,18 @@ namespace TypeDCore.Models
                 @namespace,
                 parentComponent
             );
+        }
+
+        public void SetStartScene(Project project, Component scene)
+        {
+            if (scene.TypeOBaseType != typeof(Scene)) return;
+            project.StartScene = scene.FullName;
+
+            SaveModel.AddSave<ProjectSaveContext>(project);
+
+            var gameComponent = ComponentProvider.Load(project, $"{project.ProjectName}.{project.ProjectName}Game");
+
+            ProjectModel.SaveCode(gameComponent.Template.Code);
         }
     }
 }

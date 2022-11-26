@@ -83,7 +83,6 @@ namespace TypeDCore
             Hooks.AddHook<OptionsHook>(OptionsWindowOpened);
 
             // Settings
-            SettingModel.InitContext<MainWindowSettingContext>(project);
 
             // Panels
             PanelModel.AttachPanel("typed_viewer", "Viewer", new ViewerPanel(project));
@@ -115,7 +114,6 @@ namespace TypeDCore
             Hooks.RemoveHook<OptionsHook>();
 
             // Settings
-            SettingModel.RemoveContext<MainWindowSettingContext>();
 
             // Viewers
             PanelModel.RemoveViewer<ConsoleViewer>();
@@ -135,7 +133,7 @@ namespace TypeDCore
                 $"{hook.Project.ProjectName}.Scenes"
             );
 
-            ProjectModel.SetStartScene(hook.Project, scene.Component);
+            TypeDCoreProjectModel.SetStartScene(hook.Project, scene.Component);
         }
 
         void InitUI(InitUIHook hook)
